@@ -7,3 +7,6 @@
 
 # Java
 *.class
+
+# JavaScript
+*/node_modules
