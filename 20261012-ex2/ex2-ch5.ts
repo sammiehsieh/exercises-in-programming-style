@@ -5,7 +5,7 @@ let words: any[] = [];
 let wordFreqs: any[] = [];
 
 function readFile(path: string): void {
-    data = [...data, ...fs.readFileSync(path, 'utf-8')];
+    data = data.concat(fs.readFileSync(path, 'utf-8').split(''));
 }
 
 function filterCharsAndNormalize(): void {
@@ -20,7 +20,7 @@ function filterCharsAndNormalize(): void {
 
 function scan() {
     let dataStr = data.join('');
-    words = [...words, ...dataStr.split(/\s+/)];
+    words = words.concat(dataStr.split(/\s+/));
 }
 
 function removeStopWords() {
@@ -28,15 +28,23 @@ function removeStopWords() {
     for (const abc of 'abcdefghijklmnopqrstuvwxyz') {
         stopWords.push(abc);
     }
-    let indexes: number[] = [];
+    let stopIndexes: number[] = [];
     for (let i = 0; i < words.length; i++) {
         if (stopWords.includes(words[i])) {
-            indexes.push(i);
+            stopIndexes.push(i);
         }
     }
-    for (let i = indexes.length - 1; i >= 0; i--) {
-        words = [...words.slice(0, indexes[i]), ...words.slice(indexes[i]! + 1, words.length)];
+
+    let usefulWords: string[] = [];
+    let n = 0; // point to next index that is going to be removed
+    for (let i = 0; i < words.length; i++) {
+        if (n < stopIndexes.length && stopIndexes[n] === i) {
+            n++; // meet stop word, pass it
+        } else {
+            usefulWords.push(words[i]);
+        }
     }
+    words = usefulWords;
 }
 
 function frequencies() {
