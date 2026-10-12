@@ -44,4 +44,5 @@ node ex1.ts ../pride-and-prejudice.txt
 | Exercise | Chapter/Question | File name |
 | -------- | ---------------- | --------- |
 | 1 | - | ex1.ts |
-| 2 | Ch4 | ex2.ts |
+| 2 | Ch4 | ex2-ch4.ts |
+|  | Ch5 | ex2-ch5.ts |
