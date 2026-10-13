@@ -46,6 +46,6 @@ for (let line of fs.readFileSync(process.argv[2] || '', 'utf-8').split(/\n/)) {
 }
 
 for (const tf of wordFreqs.slice(0, 25)) {
-    console.log(tf[0], '-', tf[1]);
+    console.log(tf[0], ' - ', tf[1]);
 }
 

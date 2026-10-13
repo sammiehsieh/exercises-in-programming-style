@@ -56,7 +56,7 @@ function sort(wordFreq: { [key: string]: number }) {
 
 function consoleAll(wordFreq: [string, number][]) {
     if (wordFreq.length > 0) {
-        console.log(wordFreq[0]![0], '-', wordFreq[0]![1]);
+        console.log(wordFreq[0]![0], ' - ', wordFreq[0]![1]);
         consoleAll(wordFreq.slice(1));
     }
 }

@@ -70,5 +70,5 @@ frequencies();
 sort();
 
 for (const tf of wordFreqs.slice(0, 25)) {
-    console.log(tf[0], '-', tf[1]);
+    console.log(tf[0], ' - ', tf[1]);
 }
