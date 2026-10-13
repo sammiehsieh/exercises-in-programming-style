@@ -46,3 +46,4 @@ node ex1.ts ../pride-and-prejudice.txt
 | 1 | - | ex1.ts |
 | 2 | Ch4 | ex2-ch4.ts |
 |  | Ch5 | ex2-ch5.ts |
+|  | Ch6 | ex2-ch6.ts |
