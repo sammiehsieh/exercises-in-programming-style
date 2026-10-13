@@ -34,7 +34,7 @@ function removeStopWords(wordList: string[]) {
     return result;
 }
 
-function frequencies(wordList: any[]) {
+function frequencies(wordList: string[]) {
     let wordFreqs: { [key: string]: number } = {};
     for (const w of wordList) {
         if (wordFreqs[w]) {
@@ -48,18 +48,18 @@ function frequencies(wordList: any[]) {
 
 function sort(wordFreq: { [key: string]: number }) {
     const keys = Object.keys(wordFreq);
-    let result: any[] = [];
+    let result: [string, number][] = [];
     for (let i = 0; i < keys.length; i++) {
         result.push([
-            keys[i]!, wordFreq[keys[i]!]
+            keys[i]!, wordFreq[keys[i]!] ?? 0
         ]);
     }
     return result.sort((a, b) => b[1] - a[1]);
 }
 
-function consoleAll(wordFreq: any[]) {
+function consoleAll(wordFreq: [string, number][]) {
     if (wordFreq.length > 0) {
-        console.log(wordFreq[0][0], '-', wordFreq[0][1]);
+        console.log(wordFreq[0]![0], '-', wordFreq[0]![1]);
         consoleAll(wordFreq.slice(1));
     }
 }
