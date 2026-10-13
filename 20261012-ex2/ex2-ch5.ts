@@ -25,12 +25,9 @@ function scan() {
 
 function removeStopWords() {
     let stopWords = fs.readFileSync('../stop_words.txt', 'utf-8').split(',');
-    for (const abc of 'abcdefghijklmnopqrstuvwxyz') {
-        stopWords.push(abc);
-    }
     let stopIndexes: number[] = [];
     for (let i = 0; i < words.length; i++) {
-        if (stopWords.includes(words[i])) {
+        if (stopWords.includes(words[i]) || words[i].length === 1) {
             stopIndexes.push(i);
         }
     }

@@ -3,9 +3,6 @@ import * as fs from 'fs';
 let wordFreqs: [string, number][] = [];
 
 let stopWords = fs.readFileSync('../stop_words.txt', 'utf-8').split(',');
-for (const abc of 'abcdefghijklmnopqrstuvwxyz') {
-    stopWords.push(abc);
-}
 
 for (let line of fs.readFileSync(process.argv[2] || '', 'utf-8').split(/\n/)) {
     line += '\n';
@@ -20,7 +17,7 @@ for (let line of fs.readFileSync(process.argv[2] || '', 'utf-8').split(/\n/)) {
             if (!/[a-zA-Z0-9]/.test(c)) {
                 let found = false;
                 let word = line.slice(startChar, i).toLowerCase();
-                if (!stopWords.includes(word)) {
+                if (!stopWords.includes(word) && word.length !== 1) {
                     let pairIndex = 0;
                     for (let pair of wordFreqs) {
                         if (word === pair[0]) {

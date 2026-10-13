@@ -22,12 +22,9 @@ function scan(strData: string) {
 
 function removeStopWords(wordList: string[]) {
     const stopWords = fs.readFileSync('../stop_words.txt', 'utf-8').split(',');
-    for (const abc of 'abcdefghijklmnopqrstuvwxyz') {
-        stopWords.push(abc);
-    }
     let result: string[] = [];
     for (const w of wordList) {
-        if (!stopWords.includes(w)) {
+        if (!stopWords.includes(w) && w.length !== 1) {
             result.push(w);
         }
     }
