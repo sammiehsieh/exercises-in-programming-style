@@ -44,10 +44,23 @@ function parse(reader: any, words: string[], stopWords: Set<string>) {
 
     if (char === null) { return words; }
 
-    return parse(reader, words, stopWords);
+    // return parse(reader, words, stopWords);
+    return () => parse(reader, words, stopWords);
 }
 
-const result = parse(reader, words, stopWords);
+// add this to avoid stack overflow but still keep recursive function
+function trampoline(fn: any) {
+    let result = fn();
+
+    while (typeof result === 'function') {
+        result = result();
+    }
+
+    return result;
+}
+
+// const result = parse(reader, words, stopWords);
+const result = trampoline(parse(reader, words, stopWords));
 
 const wordFreq: Record<string, number> = {};
 for (const w of result) {
