@@ -54,4 +54,4 @@ for (const w of result) {
     wordFreq[w] = (wordFreq[w] ?? 0) + 1;
 }
 
-Object.entries(wordFreq).sort((a, b) => a[1] - b[1]).slice(0, 25).forEach(([w, c]) => console.log(w, ' - ', c));
+Object.entries(wordFreq).sort((a, b) => b[1] - a[1]).slice(0, 25).forEach(([w, c]) => console.log(w, ' - ', c));
