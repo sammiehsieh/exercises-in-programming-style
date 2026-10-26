@@ -27,6 +27,7 @@ cd ./20261005-ex1
 | 1 | 20261005-ex1 |
 | 2 | 20261012-ex2 |
 | 3 | 20261019-ex3 |
+| 4 | 20261026-ex4 |
 
 3. Install the dependencies:
 
@@ -50,3 +51,4 @@ node ex1.ts ../pride-and-prejudice.txt
 |   | Ch6 | ex2-ch6.ts |
 | 3 | Ch7 | ex3-ch7.ts |
 |   | Ch8 | ex3-ch8.ts |
+| 4 | Ch9 | ex4-ch9.ts |
