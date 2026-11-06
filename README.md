@@ -1,10 +1,21 @@
-# Programming Styles: Exercise 1
+# Programming Styles Exercises
 
 ## Intro
 
 I'm using TypeScript to implement the term frequency program.
+Exercise 6 (Style #20, Plugins) is required to be in Java or C#, so I use Java for that one.
 
-## Environment
+Each exercise lives in its own folder.
+
+| Exercise | Folder name |
+| -------- | ----------- |
+| 1 | 20261005-ex1 |
+| 2 | 20261012-ex2 |
+| 3 | 20261019-ex3 |
+| 4 | 20261026-ex4 |
+| 5 | 20261109-ex6 |
+
+## Environment (TypeScript, Exercises 1 to 4)
 
 Requirement: Node.js v24 or later
 
@@ -20,15 +31,6 @@ node -v
 cd ./20261005-ex1
 ```
 
-> For each exercise, I organize the files into different folders.
-
-| Exercise | Folder name |
-| -------- | ----------- |
-| 1 | 20261005-ex1 |
-| 2 | 20261012-ex2 |
-| 3 | 20261019-ex3 |
-| 4 | 20261026-ex4 |
-
 3. Install the dependencies:
 
 ```bash
@@ -41,8 +43,6 @@ npm i
 node ex1.ts ../pride-and-prejudice.txt
 ```
 
-> For each exercise, I use different files.
-
 | Exercise | Chapter/Question | File name |
 | -------- | ---------------- | --------- |
 | 1 |  -  | ex1.ts |
@@ -54,3 +54,31 @@ node ex1.ts ../pride-and-prejudice.txt
 | 4 | Ch9 | ex4-ch9.ts |
 |   | Ch10 | ex4-ch10.ts |
 |   | Ch15 | ex4-ch15.ts |
+
+## Environment (Java, Exercise 6)
+
+Requirement: JDK 17 or later (developed with JDK 25)
+
+1. Check your Java version:
+
+```bash
+java -version
+```
+
+2. Change to the exercise directory:
+
+```bash
+cd ./20261109-ex6
+```
+
+3. Compile. The main program and the plugins are compiled separately from the shared interfaces, and the output goes to `out/`:
+
+```bash
+javac -d out api/*.java plugins/*.java Main.java
+```
+
+4. Run the program:
+
+```bash
+java -cp out Main ../pride-and-prejudice.txt
+```
