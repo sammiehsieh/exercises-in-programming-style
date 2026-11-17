@@ -4,6 +4,7 @@
 
 I'm using TypeScript to implement the term frequency program.
 Exercise 6 (Style #20, Plugins) is required to be in Java or C#, so I use Java for that one.
+Exercise 7 (Concurrency) needs a language with thread support, so I use Java for it too.
 
 Each exercise lives in its own folder.
 
@@ -13,7 +14,8 @@ Each exercise lives in its own folder.
 | 2 | 20261012-ex2 |
 | 3 | 20261019-ex3 |
 | 4 | 20261026-ex4 |
-| 5 | 20261109-ex6 |
+| 6 | 20261109-ex6 |
+| 7 | 20261116-ex7 |
 
 ## Environment (TypeScript, Exercises 1 to 4)
 
@@ -55,7 +57,7 @@ node ex1.ts ../pride-and-prejudice.txt
 |   | Ch10 | ex4-ch10.ts |
 |   | Ch15 | ex4-ch15.ts |
 
-## Environment (Java, Exercise 6)
+## Environment (Java, Exercises 6 and 7)
 
 Requirement: JDK 17 or later (developed with JDK 25)
 
@@ -64,6 +66,8 @@ Requirement: JDK 17 or later (developed with JDK 25)
 ```bash
 java -version
 ```
+
+### Exercise 6
 
 2. Change to the exercise directory:
 
@@ -82,3 +86,51 @@ javac -d out api/*.java plugins/*.java Main.java
 ```bash
 java -cp out Main ../pride-and-prejudice.txt
 ```
+
+### Exercise 7
+
+2. Each chapter has its own directory, so change to the one you want to run:
+
+    | Chapter/Question | Directory name | Class name |
+    | ---------------- | -------------- | --------- |
+    | Chapter 29       | ex7-ch29       | Main |
+    | Chapter 30       | ex7-ch30       | Dataspaces |
+    | Chapter 32       | ex7-ch32       | Main |
+
+    ```bash
+    cd ./20261116-ex7/{DirectoryName}
+    ```
+
+    > for example
+
+    ```bash
+    cd ./20261116-ex7/ex7-ch30
+    ```
+
+    So your files should look like this
+    ```
+    20261116-ex7
+        - ex7-ch29
+            - Main.java
+        - ex7-ch30
+            - Dataspaces.java
+        - ex7-ch32
+            - Main.java
+    ```
+
+3. Compile: 
+
+    ```bash
+    javac *.java
+    ```
+
+4. Run the program.
+
+    ```bash
+    java {ClassName} ../../pride-and-prejudice.txt
+    ```
+
+    > for example
+    ```bash
+    java Dataspaces ../../pride-and-prejudice.txt
+    ```
