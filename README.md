@@ -2,9 +2,13 @@
 
 ## Intro
 
-I'm using TypeScript to implement the term frequency program.
+I'm using TypeScript and Java to implement the term frequency program.
+
 Exercise 6 (Style #20, Plugins) is required to be in Java or C#, so I use Java for that one.
+
 Exercise 7 (Concurrency) needs a language with thread support, so I use Java for it too.
+
+Exercise 8 (Style #28, Lazy Rivers) part 2 needs the Java Stream API, so I use Java for both parts.
 
 Each exercise lives in its own folder.
 
@@ -16,6 +20,7 @@ Each exercise lives in its own folder.
 | 4 | 20261026-ex4 |
 | 6 | 20261109-ex6 |
 | 7 | 20261116-ex7 |
+| 8 | 20261123-ex8 |
 
 ## Environment (TypeScript, Exercises 1 to 4)
 
@@ -57,7 +62,7 @@ node ex1.ts ../pride-and-prejudice.txt
 |   | Ch10 | ex4-ch10.ts |
 |   | Ch15 | ex4-ch15.ts |
 
-## Environment (Java, Exercises 6 and 7)
+## Environment (Java, Exercises 6 to 8)
 
 Requirement: JDK 17 or later (developed with JDK 25)
 
@@ -133,4 +138,48 @@ java -cp out Main ../pride-and-prejudice.txt
     > for example
     ```bash
     java Dataspaces ../../pride-and-prejudice.txt
+    ```
+
+### Exercise 8
+
+2. There are two parts for this chapter(CH28), each has its own directory. Change to the one you want to run:
+
+    | Part | Directory name | Class name | Idea |
+    | ---- | -------------- | ---------- | ---- |
+    | Part 1 | iteraotrs | Main | Iterators, one class per layer |
+    | Part 2 | streams | Main | Java Stream API |
+
+    ```bash
+    cd ./20261123-ex8/{DirectoryName}
+    ```
+
+    > for example
+
+    ```bash
+    cd ./20261123-ex8/iterators
+    ```
+
+    So your files should look like this
+    ```
+    20261123-ex8
+        - iterators
+            - Main.java
+            - Lines.java
+            - Words.java
+            - NonStopWords.java
+            - CountAndSort.java
+        - streams
+            - Main.java
+    ```
+
+3. Compile:
+
+    ```bash
+    javac *.java
+    ```
+
+4. Run the program.
+
+    ```bash
+    java Main ../../pride-and-prejudice.txt
     ```
